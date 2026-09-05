@@ -22,9 +22,8 @@
       line-height: 1.6;
     }
 
-    /* Screen 1: Hero Entryway */
     header {
-      min-height: 80vh;
+      min-height: 70vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -58,14 +57,6 @@
       color: var(--subtext);
     }
 
-    .scroll-indicator {
-      margin-top: 40px;
-      color: var(--gold);
-      font-size: 1.5rem;
-      animation: bounce 2s infinite;
-    }
-
-    /* Screen 2 & 3: Exhibits */
     .gallery {
       max-width: 600px;
       margin: 40px auto;
@@ -75,7 +66,7 @@
     .exhibit {
       background-color: var(--card-bg);
       border: 1px solid #222;
-      margin-bottom: 60px;
+      margin-bottom: 50px;
       padding: 20px;
       border-radius: 6px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.7);
@@ -90,7 +81,7 @@
 
     .frame img {
       width: 100%;
-      max-height: 400px;
+      max-height: 450px;
       object-fit: cover;
       display: block;
     }
@@ -126,12 +117,6 @@
       color: #444;
       border-top: 1px solid #1a1a1a;
     }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-      40% {transform: translateY(-10px);}
-      60% {transform: translateY(-5px);}
-    }
   </style>
 </head>
 <body>
@@ -144,15 +129,70 @@
       <p><strong>Admission:</strong> Free for real friends</p>
       <p><strong>Exhibit Dates:</strong> September 2026 – Forever</p>
     </div>
-
-    <div class="scroll-indicator">↓</div>
   </header>
 
   <main class="gallery">
 
+    <!-- EXHIBIT 1 -->
     <div class="exhibit">
       <div class="frame">
-        <img src="rayan1.jpg" alt="Exhibit 1">
+        <img src="163f0a51-4a3e-4c02-ba93-b29f20919c64.jpeg" alt="Exhibit 1">
+      </div>
+      <div class="plaque">
+        <h2>Study in Unprovoked Chaos</h2>
+        <div class="details">Artist: Rayan • c. 2025 • Candid Impressionism</div>
+        <div class="notes">
+          <strong>Curator's Note:</strong> An unscripted capture of pure kinetic energy. Scholars debate whether the subject was acting out or simply confused.
+        </div>
+      </div>
+    </div>
+
+    <!-- EXHIBIT 2 -->
+    <div class="exhibit">
+      <div class="frame">
+        <img src="280b7aff-adff-44fb-b6fe-e67b7327bad5.jpeg" alt="Exhibit 2">
+      </div>
+      <div class="plaque">
+        <h2>The Golden Hour Delusion</h2>
+        <div class="details">Artist: Self Portrait • c. 2026 • Mobile Media</div>
+        <div class="notes">
+          <strong>Curator's Note:</strong> The subject attempts to capture natural lighting, unaware that his aura outshines the sun itself. A classic piece of narcissism.
+        </div>
+      </div>
+    </div>
+
+    <!-- EXHIBIT 3 -->
+    <div class="exhibit">
+      <div class="frame">
+        <img src="3081612c-26c3-44eb-80db-dc0d94ac7865.jpeg" alt="Exhibit 3">
+      </div>
+      <div class="plaque">
+        <h2>A Masterclass in Low Effort</h2>
+        <div class="details">Artist: Anonymous • c. 2026 • Still Life</div>
+        <div class="notes">
+          <strong>Curator's Note:</strong> Capturing Rayan in his natural habitat—doing absolute baseline effort while maintaining maximum confidence.
+        </div>
+      </div>
+    </div>
+
+    <!-- EXHIBIT 4 -->
+    <div class="exhibit">
+      <div class="frame">
+        <img src="8f662c0c-6514-4c69-b21f-5a7189e063e6.jpeg" alt="Exhibit 4">
+      </div>
+      <div class="plaque">
+        <h2>The Unspoken Trauma</h2>
+        <div class="details">Artist: Direct Message • c. 2025 • Digital Media</div>
+        <div class="notes">
+          <strong>Curator's Note:</strong> A candid look into a moment of pure disbelief. Notice the eyes reflecting a soul that has completely given up.
+        </div>
+      </div>
+    </div>
+
+    <!-- EXHIBIT 5 -->
+    <div class="exhibit">
+      <div class="frame">
+        <img src="IMG_3114.jpeg" alt="Exhibit 5">
       </div>
       <div class="plaque">
         <h2>The Unread Message</h2>
@@ -163,15 +203,30 @@
       </div>
     </div>
 
+    <!-- EXHIBIT 6 -->
     <div class="exhibit">
       <div class="frame">
-        <img src="rayan2.jpg" alt="Exhibit 2">
+        <img src="IMG_3115.jpeg" alt="Exhibit 6">
       </div>
       <div class="plaque">
         <h2>Portrait of a Bad Decision</h2>
         <div class="details">Artist: Direct Message • c. 2025 • Digital Photograph</div>
         <div class="notes">
           <strong>Curator's Note:</strong> A rare study in immediate regret. Taken approximately three seconds before impact, this piece demonstrates the fragile nature of youth and bad ideas.
+        </div>
+      </div>
+    </div>
+
+    <!-- EXHIBIT 7 -->
+    <div class="exhibit">
+      <div class="frame">
+        <img src="e5a04e3a-e114-46b3-ab9c-b298f5076777.jpeg" alt="Exhibit 7">
+      </div>
+      <div class="plaque">
+        <h2>The Final Masterpiece</h2>
+        <div class="details">Artist: The Universe • c. 2026 • Fine Art</div>
+        <div class="notes">
+          <strong>Curator's Note:</strong> A fitting conclusion to the exhibition. Another year older, but somehow no wiser. Happy Birthday, Rayan!
         </div>
       </div>
     </div>
