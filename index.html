@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Museum of Rayan</title>
+  <title>The Rayan Experience</title>
   <style>
     :root {
       --bg: #0d0d0d;
@@ -23,7 +23,7 @@
     }
 
     header {
-      min-height: 70vh;
+      min-height: 60vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -45,28 +45,46 @@
       font-style: italic;
       color: var(--subtext);
       font-size: 1.1rem;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
-    .info-box {
-      border: 1px solid #333;
-      padding: 15px 25px;
-      border-radius: 4px;
-      background: #121212;
-      font-size: 0.9rem;
-      color: var(--subtext);
+    nav {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
     }
 
-    .gallery {
+    nav a {
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 0.85rem;
+      border: 1px solid var(--gold);
+      padding: 6px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .container {
       max-width: 600px;
       margin: 40px auto;
       padding: 0 20px;
     }
 
-    .exhibit {
+    .section-title {
+      text-align: center;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 30px;
+      border-bottom: 1px dashed #333;
+      padding-bottom: 10px;
+    }
+
+    .exhibit, .card {
       background-color: var(--card-bg);
       border: 1px solid #222;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
       padding: 20px;
       border-radius: 6px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.7);
@@ -92,9 +110,9 @@
       border-top: 1px solid #222;
     }
 
-    .plaque h2 {
+    .plaque h3 {
       margin: 0 0 5px 0;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       color: #fff;
     }
 
@@ -110,6 +128,39 @@
       font-style: italic;
     }
 
+    /* Quiz Styling */
+    .quiz-option {
+      background: #111;
+      border: 1px solid #333;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    /* Guestbook Form */
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background: #111;
+      border: 1px solid #333;
+      color: #fff;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+
+    button {
+      background: var(--gold);
+      color: #000;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
     footer {
       text-align: center;
       padding: 40px 20px;
@@ -122,119 +173,130 @@
 <body>
 
   <header>
-    <h1>The Museum of Rayan</h1>
-    <p class="subtitle">A Retrospective Exhibition of Pure Greatness</p>
+    <h1>The Rayan Experience</h1>
+    <p class="subtitle">Official Birthday Portal & Archive</p>
     
-    <div class="info-box">
-      <p><strong>Admission:</strong> Free for real friends</p>
-      <p><strong>Exhibit Dates:</strong> September 2026 – Forever</p>
-    </div>
+    <nav>
+      <a href="#gallery">Museum</a>
+      <a href="#quiz">Trivia</a>
+      <a href="#guestbook">Guestbook</a>
+    </nav>
   </header>
 
-  <main class="gallery">
+  <main class="container">
 
-    <!-- EXHIBIT 1 -->
-    <div class="exhibit">
-      <div class="frame">
-        <img src="163f0a51-4a3e-4c02-ba93-b29f20919c64.jpeg" alt="Exhibit 1">
-      </div>
-      <div class="plaque">
-        <h2>Study in Unprovoked Chaos</h2>
-        <div class="details">Artist: Rayan • c. 2025 • Candid Impressionism</div>
-        <div class="notes">
-          <strong>Curator's Note:</strong> An unscripted capture of pure kinetic energy. Scholars debate whether the subject was acting out or simply confused.
+    <!-- SECTION 1: THE MUSEUM -->
+    <section id="gallery">
+      <h2 class="section-title">The Grand Gallery</h2>
+
+      <div class="exhibit">
+        <div class="frame">
+          <img src="163f0a51-4a3e-4c02-ba93-b29f20919c64.jpeg" alt="Exhibit 1">
+        </div>
+        <div class="plaque">
+          <h3>Study in Unprovoked Chaos</h3>
+          <div class="details">Artist: Rayan • c. 2025</div>
+          <div class="notes">An unscripted capture of pure kinetic energy.</div>
         </div>
       </div>
-    </div>
 
-    <!-- EXHIBIT 2 -->
-    <div class="exhibit">
-      <div class="frame">
-        <img src="280b7aff-adff-44fb-b6fe-e67b7327bad5.jpeg" alt="Exhibit 2">
-      </div>
-      <div class="plaque">
-        <h2>The Golden Hour Delusion</h2>
-        <div class="details">Artist: Self Portrait • c. 2026 • Mobile Media</div>
-        <div class="notes">
-          <strong>Curator's Note:</strong> The subject attempts to capture natural lighting, unaware that his aura outshines the sun itself. A classic piece of narcissism.
+      <div class="exhibit">
+        <div class="frame">
+          <img src="280b7aff-adff-44fb-b6fe-e67b7327bad5.jpeg" alt="Exhibit 2">
+        </div>
+        <div class="plaque">
+          <h3>The Golden Hour Delusion</h3>
+          <div class="details">Artist: Self Portrait • c. 2026</div>
+          <div class="notes">Attempting to capture natural lighting with peak aura.</div>
         </div>
       </div>
-    </div>
 
-    <!-- EXHIBIT 3 -->
-    <div class="exhibit">
-      <div class="frame">
-        <img src="3081612c-26c3-44eb-80db-dc0d94ac7865.jpeg" alt="Exhibit 3">
-      </div>
-      <div class="plaque">
-        <h2>A Masterclass in Low Effort</h2>
-        <div class="details">Artist: Anonymous • c. 2026 • Still Life</div>
-        <div class="notes">
-          <strong>Curator's Note:</strong> Capturing Rayan in his natural habitat—doing absolute baseline effort while maintaining maximum confidence.
+      <div class="exhibit">
+        <div class="frame">
+          <img src="3081612c-26c3-44eb-80db-dc0d94ac7865.jpeg" alt="Exhibit 3">
+        </div>
+        <div class="plaque">
+          <h3>A Masterclass in Low Effort</h3>
+          <div class="details">Artist: Anonymous • c. 2026</div>
+          <div class="notes">Baseline effort paired with maximum confidence.</div>
         </div>
       </div>
-    </div>
 
-    <!-- EXHIBIT 4 -->
-    <div class="exhibit">
-      <div class="frame">
-        <img src="8f662c0c-6514-4c69-b21f-5a7189e063e6.jpeg" alt="Exhibit 4">
-      </div>
-      <div class="plaque">
-        <h2>The Unspoken Trauma</h2>
-        <div class="details">Artist: Direct Message • c. 2025 • Digital Media</div>
-        <div class="notes">
-          <strong>Curator's Note:</strong> A candid look into a moment of pure disbelief. Notice the eyes reflecting a soul that has completely given up.
+      <div class="exhibit">
+        <div class="frame">
+          <img src="8f662c0c-6514-4c69-b21f-5a7189e063e6.jpeg" alt="Exhibit 4">
+        </div>
+        <div class="plaque">
+          <h3>The Unspoken Trauma</h3>
+          <div class="details">Artist: Direct Message • c. 2025</div>
+          <div class="notes">A candid look into a moment of pure disbelief.</div>
         </div>
       </div>
-    </div>
 
-    <!-- EXHIBIT 5 -->
-    <div class="exhibit">
-      <div class="frame">
-        <img src="IMG_3114.jpeg" alt="Exhibit 5">
-      </div>
-      <div class="plaque">
-        <h2>The Unread Message</h2>
-        <div class="details">Artist: Unknown • c. 2024 • Digital Media</div>
-        <div class="notes">
-          <strong>Curator's Note:</strong> Notice the subtle tension in the subject’s posture. By staring directly at his phone for 45 minutes while ignoring a direct question, Rayan explores themes of modern isolation and extreme laziness.
+      <div class="exhibit">
+        <div class="frame">
+          <img src="IMG_3114.jpeg" alt="Exhibit 5">
+        </div>
+        <div class="plaque">
+          <h3>The Unread Message</h3>
+          <div class="details">Artist: Unknown • c. 2024</div>
+          <div class="notes">Exploring modern isolation and extreme laziness.</div>
         </div>
       </div>
-    </div>
 
-    <!-- EXHIBIT 6 -->
-    <div class="exhibit">
-      <div class="frame">
-        <img src="IMG_3115.jpeg" alt="Exhibit 6">
-      </div>
-      <div class="plaque">
-        <h2>Portrait of a Bad Decision</h2>
-        <div class="details">Artist: Direct Message • c. 2025 • Digital Photograph</div>
-        <div class="notes">
-          <strong>Curator's Note:</strong> A rare study in immediate regret. Taken approximately three seconds before impact, this piece demonstrates the fragile nature of youth and bad ideas.
+      <div class="exhibit">
+        <div class="frame">
+          <img src="IMG_3115.jpeg" alt="Exhibit 6">
+        </div>
+        <div class="plaque">
+          <h3>Portrait of a Bad Decision</h3>
+          <div class="details">Artist: Direct Message • c. 2025</div>
+          <div class="notes">Demonstrating the fragile nature of youth and bad ideas.</div>
         </div>
       </div>
-    </div>
 
-    <!-- EXHIBIT 7 -->
-    <div class="exhibit">
-      <div class="frame">
-        <img src="e5a04e3a-e114-46b3-ab9c-b298f5076777.jpeg" alt="Exhibit 7">
-      </div>
-      <div class="plaque">
-        <h2>The Final Masterpiece</h2>
-        <div class="details">Artist: The Universe • c. 2026 • Fine Art</div>
-        <div class="notes">
-          <strong>Curator's Note:</strong> A fitting conclusion to the exhibition. Another year older, but somehow no wiser. Happy Birthday, Rayan!
+      <div class="exhibit">
+        <div class="frame">
+          <img src="e5a04e3a-e114-46b3-ab9c-b298f5076777.jpeg" alt="Exhibit 7">
+        </div>
+        <div class="plaque">
+          <h3>The Final Masterpiece</h3>
+          <div class="details">Artist: The Universe • c. 2026</div>
+          <div class="notes">Another year older, but somehow no wiser.</div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- SECTION 2: TRIVIA QUIZ -->
+    <section id="quiz">
+      <h2 class="section-title">Rayan Trivia</h2>
+      <div class="card">
+        <h3>How well do you actually know Rayan?</h3>
+        <p style="color: var(--subtext); font-size: 0.9rem;">What is Rayan's most iconic response to a long message?</p>
+        <div class="quiz-option" onclick="alert('Correct! Standard Rayan behavior.')">1. "Damn that's crazy"</div>
+        <div class="quiz-option" onclick="alert('Incorrect! He would never type that much.')">2. A thoughtful 3-paragraph response</div>
+        <div class="quiz-option" onclick="alert('Close, but usually he just leaves it on read.')">3. Leaving it on read for 3 business days</div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: GUESTBOOK -->
+    <section id="guestbook">
+      <h2 class="section-title">VIP Guestbook</h2>
+      <div class="card">
+        <h3>Leave a Birthday Message</h3>
+        <p style="color: var(--subtext); font-size: 0.85rem;">Sign the registry to document your presence at the exhibition.</p>
+        <form onsubmit="event.preventDefault(); alert('Message submitted to the Curator!');">
+          <input type="text" placeholder="Your Name" required>
+          <textarea rows="4" placeholder="Write your birthday note or roasting here..." required></textarea>
+          <button type="submit">SUBMIT TO CURATOR</button>
+        </form>
+      </div>
+    </section>
 
   </main>
 
   <footer>
-    <p>&copy; 2026 The Rayan Birthday Museum. All rights reserved.</p>
+    <p>&copy; 2026 The Rayan Experience. All rights reserved.</p>
   </footer>
 
 </body>
