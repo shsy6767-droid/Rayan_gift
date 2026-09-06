@@ -23,7 +23,7 @@
     }
 
     header {
-      min-height: 60vh;
+      min-height: 50vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -50,14 +50,16 @@
 
     nav {
       display: flex;
-      gap: 15px;
+      gap: 10px;
       margin-top: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     nav a {
       color: var(--gold);
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       border: 1px solid var(--gold);
       padding: 6px 12px;
       border-radius: 20px;
@@ -128,21 +130,10 @@
       font-style: italic;
     }
 
-    /* Quiz Styling */
-    .quiz-option {
-      background: #111;
-      border: 1px solid #333;
-      padding: 10px;
-      margin: 8px 0;
-      border-radius: 4px;
-      cursor: pointer;
-      color: var(--text);
-    }
-
-    /* Guestbook Form */
+    /* Quiz Input Styling */
     input, textarea, button {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       margin-top: 10px;
       background: #111;
       border: 1px solid #333;
@@ -159,6 +150,21 @@
       border: none;
       cursor: pointer;
       margin-top: 15px;
+      letter-spacing: 1px;
+    }
+
+    /* Secret Unlocked Section */
+    #secret-vault {
+      display: none;
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+      background: linear-gradient(145deg, #18150c, #161616);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     footer {
@@ -178,14 +184,44 @@
     
     <nav>
       <a href="#gallery">Museum</a>
-      <a href="#quiz">Trivia</a>
+      <a href="#trivia">Secret Access</a>
       <a href="#guestbook">Guestbook</a>
     </nav>
   </header>
 
   <main class="container">
 
-    <!-- SECTION 1: THE MUSEUM -->
+    <!-- TRIVIA / SECRET ACCESS SECTION -->
+    <section id="trivia">
+      <h2 class="section-title">Curator Verification</h2>
+      <div class="card">
+        <h3>VIP Security Check</h3>
+        <p style="color: var(--subtext); font-size: 0.95rem;">
+          Is Sigm a good friend of yours?
+        </p>
+        <input type="text" id="answer-input" placeholder="Type your answer here..." autocomplete="off">
+        <button onclick="checkAnswer()">SUBMIT ANSWER</button>
+        <p id="feedback" style="font-size: 0.85rem; margin-top: 10px; font-style: italic;"></p>
+      </div>
+
+      <!-- HIDDEN UNLOCKED EXHIBIT -->
+      <div id="secret-vault" class="card">
+        <h2 style="color: var(--gold); margin-top: 0; text-align: center;">👑 SECRET VAULT UNLOCKED 👑</h2>
+        <p style="text-align: center; font-style: italic; color: #fff;">
+          "Correct answer. Loyalty recognized by the Curator."
+        </p>
+        <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
+        <h3 style="color: var(--gold);">Special Birthday Privilege</h3>
+        <p style="font-size: 0.9rem; color: var(--subtext);">
+          You have unlocked the Ultimate Friend Tier. This grants Rayan 1x free pass to request any favor from Sigm, valid through 2027.
+        </p>
+        <div style="background: #000; padding: 15px; border-left: 3px solid var(--gold); margin-top: 15px; font-size: 0.85rem; color: var(--gold);">
+          <strong>Curator Message:</strong> Thanks for being a real one. Enjoy the rest of the exhibition! 🎉🎈
+        </div>
+      </div>
+    </section>
+
+    <!-- THE MUSEUM GALLERY -->
     <section id="gallery">
       <h2 class="section-title">The Grand Gallery</h2>
 
@@ -267,19 +303,7 @@
       </div>
     </section>
 
-    <!-- SECTION 2: TRIVIA QUIZ -->
-    <section id="quiz">
-      <h2 class="section-title">Rayan Trivia</h2>
-      <div class="card">
-        <h3>How well do you actually know Rayan?</h3>
-        <p style="color: var(--subtext); font-size: 0.9rem;">What is Rayan's most iconic response to a long message?</p>
-        <div class="quiz-option" onclick="alert('Correct! Standard Rayan behavior.')">1. "Damn that's crazy"</div>
-        <div class="quiz-option" onclick="alert('Incorrect! He would never type that much.')">2. A thoughtful 3-paragraph response</div>
-        <div class="quiz-option" onclick="alert('Close, but usually he just leaves it on read.')">3. Leaving it on read for 3 business days</div>
-      </div>
-    </section>
-
-    <!-- SECTION 3: GUESTBOOK -->
+    <!-- GUESTBOOK SECTION -->
     <section id="guestbook">
       <h2 class="section-title">VIP Guestbook</h2>
       <div class="card">
@@ -298,6 +322,25 @@
   <footer>
     <p>&copy; 2026 The Rayan Experience. All rights reserved.</p>
   </footer>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById('answer-input').value.trim().toLowerCase();
+      const feedback = document.getElementById('feedback');
+      const vault = document.getElementById('secret-vault');
+
+      if (input === 'yes' || input === 'yeah' || input === 'yep') {
+        feedback.style.color = '#d4af37';
+        feedback.textContent = 'Access Granted. Unlocking Secret Vault...';
+        vault.style.display = 'block';
+        vault.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        feedback.style.color = '#ff5555';
+        feedback.textContent = 'Access Denied. Wrong answer! Try typing "yes".';
+        vault.style.display = 'none';
+      }
+    }
+  </script>
 
 </body>
 </html>
