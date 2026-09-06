@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Rayan Experience</title>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <style>
     :root {
       --bg: #0d0d0d;
@@ -24,7 +23,7 @@
     }
 
     header {
-      min-height: 55vh;
+      min-height: 50vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -46,29 +45,13 @@
       font-style: italic;
       color: var(--subtext);
       font-size: 1.1rem;
-      margin-bottom: 15px;
-    }
-
-    .confetti-btn {
-      background: linear-gradient(135deg, #d4af37, #f3e5ab);
-      color: #000;
-      font-weight: bold;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 25px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-      margin-bottom: 15px;
-      width: auto;
+      margin-bottom: 20px;
     }
 
     nav {
       display: flex;
       gap: 10px;
-      margin-top: 10px;
+      margin-top: 15px;
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -147,6 +130,7 @@
       font-style: italic;
     }
 
+    /* Quiz Input Styling */
     input, textarea, button {
       width: 100%;
       padding: 12px;
@@ -159,7 +143,7 @@
       font-family: inherit;
     }
 
-    button.submit-btn {
+    button {
       background: var(--gold);
       color: #000;
       font-weight: bold;
@@ -173,9 +157,9 @@
     #secret-vault {
       display: none;
       border: 2px solid var(--gold);
-      box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
       background: linear-gradient(145deg, #18150c, #161616);
-      animation: fadeIn 0.8s ease-in-out;
+      animation: fadeIn 1s ease-in-out;
     }
 
     @keyframes fadeIn {
@@ -198,8 +182,165 @@
     <h1>The Rayan Experience</h1>
     <p class="subtitle">Official Birthday Portal & Archive</p>
     
-    <button class="confetti-btn" onclick="launchConfetti()">🎉 Press for Birthday Confetti 🎉</button>
-
     <nav>
       <a href="#gallery">Museum</a>
-      <a href="#
+      <a href="#trivia">Secret Access</a>
+      <a href="#guestbook">Guestbook</a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- TRIVIA / SECRET ACCESS SECTION -->
+    <section id="trivia">
+      <h2 class="section-title">Curator Verification</h2>
+      <div class="card">
+        <h3>VIP Security Check</h3>
+        <p style="color: var(--subtext); font-size: 0.95rem;">
+          Is Sigm a good friend of yours?
+        </p>
+        <input type="text" id="answer-input" placeholder="Type your answer here..." autocomplete="off">
+        <button onclick="checkAnswer()">SUBMIT ANSWER</button>
+        <p id="feedback" style="font-size: 0.85rem; margin-top: 10px; font-style: italic;"></p>
+      </div>
+
+      <!-- HIDDEN UNLOCKED EXHIBIT -->
+      <div id="secret-vault" class="card">
+        <h2 style="color: var(--gold); margin-top: 0; text-align: center;">👑 SECRET VAULT UNLOCKED 👑</h2>
+        <p style="text-align: center; font-style: italic; color: #fff;">
+          "Correct answer. Loyalty recognized by the Curator."
+        </p>
+        <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
+        <h3 style="color: var(--gold);">Special Birthday Privilege</h3>
+        <p style="font-size: 0.9rem; color: var(--subtext);">
+          You have unlocked the Ultimate Friend Tier. This grants Rayan 1x free pass to request any favor from Sigm, valid through 2027.
+        </p>
+        <div style="background: #000; padding: 15px; border-left: 3px solid var(--gold); margin-top: 15px; font-size: 0.85rem; color: var(--gold);">
+          <strong>Curator Message:</strong> Thanks for being a real one. Enjoy the rest of the exhibition! 🎉🎈
+        </div>
+      </div>
+    </section>
+
+    <!-- THE MUSEUM GALLERY -->
+    <section id="gallery">
+      <h2 class="section-title">The Grand Gallery</h2>
+
+      <div class="exhibit">
+        <div class="frame">
+          <img src="163f0a51-4a3e-4c02-ba93-b29f20919c64.jpeg" alt="Exhibit 1">
+        </div>
+        <div class="plaque">
+          <h3>Study in Unprovoked Chaos</h3>
+          <div class="details">Artist: Rayan • c. 2025</div>
+          <div class="notes">An unscripted capture of pure kinetic energy.</div>
+        </div>
+      </div>
+
+      <div class="exhibit">
+        <div class="frame">
+          <img src="280b7aff-adff-44fb-b6fe-e67b7327bad5.jpeg" alt="Exhibit 2">
+        </div>
+        <div class="plaque">
+          <h3>The Golden Hour Delusion</h3>
+          <div class="details">Artist: Self Portrait • c. 2026</div>
+          <div class="notes">Attempting to capture natural lighting with peak aura.</div>
+        </div>
+      </div>
+
+      <div class="exhibit">
+        <div class="frame">
+          <img src="3081612c-26c3-44eb-80db-dc0d94ac7865.jpeg" alt="Exhibit 3">
+        </div>
+        <div class="plaque">
+          <h3>A Masterclass in Low Effort</h3>
+          <div class="details">Artist: Anonymous • c. 2026</div>
+          <div class="notes">Baseline effort paired with maximum confidence.</div>
+        </div>
+      </div>
+
+      <div class="exhibit">
+        <div class="frame">
+          <img src="8f662c0c-6514-4c69-b21f-5a7189e063e6.jpeg" alt="Exhibit 4">
+        </div>
+        <div class="plaque">
+          <h3>The Unspoken Trauma</h3>
+          <div class="details">Artist: Direct Message • c. 2025</div>
+          <div class="notes">A candid look into a moment of pure disbelief.</div>
+        </div>
+      </div>
+
+      <div class="exhibit">
+        <div class="frame">
+          <img src="IMG_3114.jpeg" alt="Exhibit 5">
+        </div>
+        <div class="plaque">
+          <h3>The Unread Message</h3>
+          <div class="details">Artist: Unknown • c. 2024</div>
+          <div class="notes">Exploring modern isolation and extreme laziness.</div>
+        </div>
+      </div>
+
+      <div class="exhibit">
+        <div class="frame">
+          <img src="IMG_3115.jpeg" alt="Exhibit 6">
+        </div>
+        <div class="plaque">
+          <h3>Portrait of a Bad Decision</h3>
+          <div class="details">Artist: Direct Message • c. 2025</div>
+          <div class="notes">Demonstrating the fragile nature of youth and bad ideas.</div>
+        </div>
+      </div>
+
+      <div class="exhibit">
+        <div class="frame">
+          <img src="e5a04e3a-e114-46b3-ab9c-b298f5076777.jpeg" alt="Exhibit 7">
+        </div>
+        <div class="plaque">
+          <h3>The Final Masterpiece</h3>
+          <div class="details">Artist: The Universe • c. 2026</div>
+          <div class="notes">Another year older, but somehow no wiser.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GUESTBOOK SECTION -->
+    <section id="guestbook">
+      <h2 class="section-title">VIP Guestbook</h2>
+      <div class="card">
+        <h3>Leave a Birthday Message</h3>
+        <p style="color: var(--subtext); font-size: 0.85rem;">Sign the registry to document your presence at the exhibition.</p>
+        <form onsubmit="event.preventDefault(); alert('Message submitted to the Curator!');">
+          <input type="text" placeholder="Your Name" required>
+          <textarea rows="4" placeholder="Write your birthday note or roasting here..." required></textarea>
+          <button type="submit">SUBMIT TO CURATOR</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 The Rayan Experience. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById('answer-input').value.trim().toLowerCase();
+      const feedback = document.getElementById('feedback');
+      const vault = document.getElementById('secret-vault');
+
+      if (input === 'yes' || input === 'yeah' || input === 'yep') {
+        feedback.style.color = '#d4af37';
+        feedback.textContent = 'Access Granted. Unlocking Secret Vault...';
+        vault.style.display = 'block';
+        vault.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        feedback.style.color = '#ff5555';
+        feedback.textContent = 'Access Denied. Wrong answer! Try typing "yes".';
+        vault.style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>
